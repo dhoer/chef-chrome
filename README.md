@@ -20,6 +20,11 @@ Chef 11.14.2 and Ruby 1.9.3 or higher.
 
 Add `recipe[chrome]` to a run list.
 
+Get version installed:
+
+```ruby
+Registry.get_value('HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon', 'version')
+```
 
 ### Attributes
 
