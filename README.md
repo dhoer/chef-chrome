@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/dhoer/chef-chrome.svg)](https://travis-ci.org/dhoer/chef-chrome)
 
-This cookbook installs Google Chrome browser (https://www.google.com/chrome/) and provides a resource to set [ default user preferences](https://support.google.com/chrome/a/answer/187948?hl=en).
+This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides a library
+method to retrieve installed version, and provides a resource to set 
+[default user preferences](https://support.google.com/chrome/a/answer/187948?hl=en).
 
 ## Requirements
 
@@ -18,26 +20,20 @@ Chef 11.14.2 and Ruby 1.9.3 or higher.
 
 ## Usage
 
-Add `recipe[chrome]` to a run list.
+Include the default recipe on a node's runlist to ensure that Firefox is installed.
 
-Get version installed:
+To get version installed:
 
 ```ruby
-Registry.get_value('HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon', 'version')
+v = chrome_version
 ```
 
-### Preferences
+### Resources
 
-Manage a template resource for configuring [master preferences](http://www.chromium.org/administrators/configuring-other-preferences).
+#### Preferences
 
-#### Resource Attributes
-
-Current attributes used by preferences:
-
-- name - The name of the preference. 
-- cookbook - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named template in the cookbook where the definition is used.
-- template - Default `master_preferences.json.erb`, source template file.
-- params - Additional parameters, see Examples.
+Manage a template resource for configuring 
+[master preferences](http://www.chromium.org/administrators/configuring-other-preferences).
 
 #### Examples
     
@@ -53,7 +49,8 @@ chrome 'custom_preferences' do
 end
 ```
 
-The chrome cookbook comes with a `master_preferences.json.erb` template as an example. The following parameter is used in the template:
+The chrome cookbook comes with a `master_preferences.json.erb` template as an example. The following parameter is used 
+in the template:
 
 - `homepage` - Sets the homepage URL.
 
@@ -75,10 +72,39 @@ The parameter specified will be used as:
 
 In the template, when you write your own, the `@` is significant.
 
+#### Resource Attributes
+
+Current attributes used by preferences:
+
+- name - The name of the preference. 
+- cookbook - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named template 
+in the cookbook where the definition is used.
+- template - Default `master_preferences.json.erb`, source template file.
+- params - Additional parameters, see Examples.
+
 ### Attributes
 
 - `node['chrome']['src']` - URI to Google Chrome FTW (MSI installer).
 - `node['chrome']['master_preferences']` - Path to Chrome master_preferences file.
+
+## ChefSpec Matchers
+
+The Selenium cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test 
+cookbooks.
+
+Example Matcher Usage
+
+```ruby
+expect(chef_run).to preferences_chrome('name').with(
+  params: {
+    homepage: 'https://www.getchef.com'
+  }
+)
+```
+      
+Chrome Cookbook Matchers
+
+- preferences_chrome(name)
 
 ## Getting Help
 

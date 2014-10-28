@@ -1,7 +1,5 @@
-chrome 'set_user_preferences' do
-  cookbook 'chrome'
-  params(
-    homepage: 'https://www.getchef.com'
-  )
-  action :preferences
+include_recipe 'chrome'
+
+log 'chrome version' do
+  message chrome_version
 end
