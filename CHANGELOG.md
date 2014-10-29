@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 0.4.0
+
+- Add 64-bit support
+
 ## 0.3.0
 
 - Add chrome_version method

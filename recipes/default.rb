@@ -1,6 +1,7 @@
 if platform?('windows')
+  flavor =  node['kernel']['machine'] == 'x86_64' && !node['chrome']['32bit_only']
   windows_package 'Google Chrome' do
-    source node['chrome']['src']
+    source flavor ? node['chrome']['x86_64']['src'] : node['chrome']['src']
     action :nothing
   end.run_action('install')
 else

@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/dhoer/chef-chrome.svg)](https://travis-ci.org/dhoer/chef-chrome)
 
 This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides a library
-method to retrieve installed version, and provides a resource to set 
+method to retrieve version installed, and provides a resource to set 
 [default user preferences](https://support.google.com/chrome/a/answer/187948?hl=en).
 
 ## Requirements
@@ -20,9 +20,9 @@ Chef 11.14.2 and Ruby 1.9.3 or higher.
 
 ## Usage
 
-Include the default recipe on a node's runlist to ensure that Firefox is installed.
+Include the default recipe on a node's runlist to ensure that Chrome is installed.
 
-To get version installed:
+To get Chrome version installed:
 
 ```ruby
 v = chrome_version
@@ -49,7 +49,7 @@ chrome 'custom_preferences' do
 end
 ```
 
-The chrome cookbook comes with a `master_preferences.json.erb` template as an example. The following parameter is used 
+The Chrome cookbook comes with a `master_preferences.json.erb` template as an example. The following parameter is used 
 in the template:
 
 - `homepage` - Sets the homepage URL.
@@ -86,11 +86,12 @@ in the cookbook where the definition is used.
 
 - `node['chrome']['src']` - URI to Google Chrome FTW (MSI installer).
 - `node['chrome']['master_preferences']` - Path to Chrome master_preferences file.
+- `node['chrome']['32bit_only']` - Install only 32-bit browser on 64-bit machines.
 
 ## ChefSpec Matchers
 
-The Selenium cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test 
-cookbooks.
+The Chrome cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test your 
+own cookbooks.
 
 Example Matcher Usage
 
