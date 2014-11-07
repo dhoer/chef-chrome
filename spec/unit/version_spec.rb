@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'chrome_test::version' do
   context 'returns version for windows install' do
     let(:chef_run) do
-      ChefSpec::Runner.new(platform: 'windows', version: '2008R2') do
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do
         allow(::Dir).to receive(:entries) { %w(. .. 38.0.2125.104 38.0.2125.234 master_preferences) }
       end.converge(described_recipe)
     end
@@ -19,7 +19,7 @@ describe 'chrome_test::version' do
 
   context 'returns version for windows install' do
     let(:chef_run) do
-      ChefSpec::Runner.new do
+      ChefSpec::SoloRunner.new do
         allow(::Dir).to receive(:entries) { %w(. .. 38.0.2125.104 38.0.2125.234 master_preferences) }
       end.converge(described_recipe)
     end

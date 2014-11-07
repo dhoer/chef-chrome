@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'chrome_test::preferences' do
-  let(:chef_run) { ChefSpec::Runner.new(step_into: ['chrome']).converge(described_recipe) }
+  let(:chef_run) { ChefSpec::SoloRunner.new(step_into: ['chrome']).converge(described_recipe) }
 
   it 'sets preferences' do
     expect(chef_run).to preferences_chrome('set_user_preferences').with(
