@@ -9,3 +9,10 @@ RuboCop::RakeTask.new(:rubocop)
 FoodCritic::Rake::LintTask.new(:foodcritic)
 
 task default: [:foodcritic, :rubocop, :spec]
+
+begin
+  require 'kitchen/rake_tasks'
+  Kitchen::RakeTasks.new
+rescue LoadError
+  puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
+end

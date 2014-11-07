@@ -10,30 +10,54 @@ method to retrieve version installed, and provides a resource to set
 
 Chef 11.14.2 and Ruby 1.9.3 or higher.
 
-### Platform
+### Platforms
 
-- Windows Server 2012 R2
+- CentOS 7+, Red Hat 7+, Fedora 17+
+- Debian, Ubuntu
+- Mac OS X
+- Windows
 
 ### Cookbooks
 
+These cookbooks are referenced with suggests instead of depends, so be sure to upload the cookbook that applies to 
+target platform.
+
+- apt
+- dmg
+- yum
 - windows
 
 ## Usage
 
 Include the default recipe on a node's runlist to ensure that Chrome is installed.
 
-To get Chrome version installed:
+A library method is provided to retrieve the Chrome version installed:
 
 ```ruby
 v = chrome_version
 ```
+### Attributes
 
-### Resources
+See [attributes/default.rb](https://github.com/dhoer/chef-chrome/blob/master/attributes/default.rb) for complete list 
+of attributes.
 
-#### Preferences
+- `node['chrome']['track']` - For Linux only. Install stable, beta or unstable version. Default is `stable`.
+- `node['chrome']['32bit_only']` - For windows only. Install 32-bit browser on 64-bit machines. Default is `false`.
+
+### Preferences Resource
 
 Manage a template resource for configuring 
 [master preferences](http://www.chromium.org/administrators/configuring-other-preferences).
+
+#### Resource Attributes
+
+Current attributes used by preferences:
+
+- `name` - The name of the preference. 
+- `cookbook` - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named 
+template in the cookbook where the definition is used.
+- `template` - Default `master_preferences.json.erb`, source template file.
+- `params` - Additional parameters, see Examples.
 
 #### Examples
     
@@ -71,22 +95,6 @@ The parameter specified will be used as:
 - `@params[:homepage]`
 
 In the template, when you write your own, the `@` is significant.
-
-#### Resource Attributes
-
-Current attributes used by preferences:
-
-- name - The name of the preference. 
-- cookbook - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named template 
-in the cookbook where the definition is used.
-- template - Default `master_preferences.json.erb`, source template file.
-- params - Additional parameters, see Examples.
-
-### Attributes
-
-- `node['chrome']['src']` - URI to Google Chrome FTW (MSI installer).
-- `node['chrome']['master_preferences']` - Path to Chrome master_preferences file.
-- `node['chrome']['32bit_only']` - Install only 32-bit browser on 64-bit machines.
 
 ## ChefSpec Matchers
 

@@ -4,7 +4,7 @@ end
 
 action :preferences do
   converge_by('chrome_preferences') do
-    template node['chrome']['master_preferences'] do
+    template node['chrome']['win_preferences'] do
       source new_resource.template
       local new_resource.local
       cookbook new_resource.cookbook if new_resource.cookbook

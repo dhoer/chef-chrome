@@ -1,8 +1,12 @@
 # Chrome Changelog
 
+## 1.0.0
+
+- Support multiple platforms
+
 ## 0.4.0
 
-- Add 64-bit support
+- Add 64-bit support for windows
 
 ## 0.3.0
 

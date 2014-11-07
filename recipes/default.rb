@@ -1,9 +1,11 @@
-if platform?('windows')
-  flavor =  node['kernel']['machine'] == 'x86_64' && !node['chrome']['32bit_only']
-  windows_package 'Google Chrome' do
-    source flavor ? node['chrome']['x86_64']['src'] : node['chrome']['src']
-    action :nothing
-  end.run_action('install')
+if platform_family?('windows')
+  include_recipe 'chrome::msi'
+elsif platform_family?('mac_os_x')
+  include_recipe 'chrome::dmg'
+elsif platform_family?('rhel', 'fedora')
+  include_recipe 'chrome::yum'
+elsif platform_family?('debian')
+  include_recipe 'chrome::apt'
 else
-  Chef::Log.warn('Chrome can only be installed on the Windows platform using this cookbook.')
+  Chef::Log.warn('Chrome cannot be installed on this platform using this cookbook.')
 end
