@@ -4,5 +4,8 @@ gem 'foodcritic', '~> 4.0'
 gem 'rubocop', '~> 0.26'
 gem 'chefspec', '~> 4.0'
 gem 'berkshelf', '~> 3.1'
-gem 'test-kitchen'
-gem 'kitchen-vagrant'
+
+group :integration do
+  gem 'test-kitchen', '~> 1.2'
+  gem 'kitchen-vagrant', '~> 0.15'
+end
