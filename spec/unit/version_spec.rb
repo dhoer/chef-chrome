@@ -1,31 +1,35 @@
 require 'spec_helper'
 
 describe 'chrome_test::version' do
-  context 'returns version for windows install' do
-    let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do
-        allow(::Dir).to receive(:entries) { %w(. .. 38.0.2125.104 38.0.2125.234 master_preferences) }
-      end.converge(described_recipe)
-    end
+  context 'windows install' do
+    let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2').converge(described_recipe) }
 
-    it 'includes chrome default recipe' do
-      expect(chef_run).to include_recipe('chrome::default')
-    end
+    before { allow(::Dir).to receive(:entries) { %w(. .. 38.0.2125.104 38.0.2125.234 master_preferences) } }
 
-    it 'returns latest chrome version' do
+    it 'returns chrome version' do
       expect(chef_run).to write_log('38.0.2125.234')
     end
   end
 
-  context 'returns version for windows install' do
-    let(:chef_run) do
-      ChefSpec::SoloRunner.new do
-        allow(::Dir).to receive(:entries) { %w(. .. 38.0.2125.104 38.0.2125.234 master_preferences) }
-      end.converge(described_recipe)
-    end
+  context 'mac install' do
+    let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.7.4').converge(described_recipe) }
+    let(:shellout) { double(run_command: nil, error!: nil, stdout: ' 38.0.2125.234') }
 
-    it 'returns nothing' do
-      expect(chef_run).to_not write_log('38.0.2125.234')
+    before { allow(Mixlib::ShellOut).to receive(:new).and_return(shellout) }
+
+    it 'returns chrome version' do
+      expect(chef_run).to write_log('38.0.2125.234')
+    end
+  end
+
+  context '*nix install' do
+    let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
+    let(:shellout) { double(run_command: nil, error!: nil, stdout: 'Google Chrome 38.0.2125.234') }
+
+    before { allow(Mixlib::ShellOut).to receive(:new).and_return(shellout) }
+
+    it 'returns chrome version' do
+      expect(chef_run).to write_log('38.0.2125.234')
     end
   end
 end
