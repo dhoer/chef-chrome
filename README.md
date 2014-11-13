@@ -4,7 +4,7 @@
 
 This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides a library
 method to retrieve version installed, and provides a resource to set 
-[default user preferences](https://support.google.com/chrome/a/answer/187948?hl=en).
+[master_preferences](https://support.google.com/chrome/a/answer/187948?hl=en).
 
 ## Requirements
 
@@ -12,7 +12,7 @@ Chef 11.14.2 and Ruby 1.9.3 or higher.
 
 ### Platforms
 
-- CentOS 7+, Red Hat 7+, Fedora 17+
+- CentOS 7, Red Hat 7, Fedora
 - Debian, Ubuntu
 - Mac OS X
 - Windows
@@ -45,7 +45,7 @@ of attributes.
 - `node['chrome']['track']` - For Linux only. Install stable, beta or unstable version. Default is `stable`.
 - `node['chrome']['32bit_only']` - For windows only. Install 32-bit browser on 64-bit machines. Default is `false`.
 
-## Preferences Resource
+## master_preferences 
 
 Manage a template resource for configuring 
 [master preferences](http://www.chromium.org/administrators/configuring-other-preferences).
@@ -60,7 +60,7 @@ template in the cookbook where the definition is used.
 
 ### Examples
     
-The following example would look for a template named `master_preferences.json.erb` in your cookbook.
+The following example would look for a template named `master_preferences.json.erb` in your cookbook:
 
 ```ruby
 chrome 'custom_preferences' do
@@ -68,7 +68,7 @@ chrome 'custom_preferences' do
     homepage: 'https://mycompany.com/'
     import_bookmarks_from_file: 'c:\path\to\bookmarks.html'
   )
-  action :preferences
+  action :master_preferences
 end
 ```
 
@@ -85,7 +85,7 @@ chrome 'set_user_preferences' do
   params(
     homepage: 'https://www.getchef.com'
   )
-  action :preferences
+  action :master_preferences
 end
 ```
     
@@ -103,7 +103,7 @@ own cookbooks.
 Example Matcher Usage
 
 ```ruby
-expect(chef_run).to preferences_chrome('name').with(
+expect(chef_run).to master_preferences_chrome('name').with(
   params: {
     homepage: 'https://www.getchef.com'
   }
@@ -112,7 +112,7 @@ expect(chef_run).to preferences_chrome('name').with(
       
 Chrome Cookbook Matchers
 
-- preferences_chrome(name)
+- master_preferences_chrome(name)
 
 ## Getting Help
 
