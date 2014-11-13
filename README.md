@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/dhoer/chef-chrome.svg)](https://travis-ci.org/dhoer/chef-chrome)
 
-This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides a library
-method to retrieve version installed, and provides a resource to set 
-[master_preferences](https://support.google.com/chrome/a/answer/187948?hl=en).
+This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides 
+`chrome_version` library method  to retrieve Chrome version installed, and provides `master_preferences` resource
+to set user preferences.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ target platform.
 
 Include the default recipe on a node's runlist to ensure that Chrome is installed.
 
-A library method is provided to retrieve the Chrome version installed:
+A library method `chrome_version` is provided to retrieve the Chrome version installed:
 
 ```ruby
 v = chrome_version
@@ -39,16 +39,16 @@ v = chrome_version
 
 ### Attributes
 
-See [attributes/default.rb](https://github.com/dhoer/chef-chrome/blob/master/attributes/default.rb) for complete list 
-of attributes.
-
 - `node['chrome']['track']` - For Linux only. Install stable, beta or unstable version. Default is `stable`.
 - `node['chrome']['32bit_only']` - For windows only. Install 32-bit browser on 64-bit machines. Default is `false`.
 
+See [attributes/default.rb](https://github.com/dhoer/chef-chrome/blob/master/attributes/default.rb) for complete list 
+of attributes.
+
 ## master_preferences 
 
-Manage a template resource for configuring 
-[master preferences](http://www.chromium.org/administrators/configuring-other-preferences).
+Manage a template resource that configures master_preferences
+([More info...](http://www.chromium.org/administrators/configuring-other-preferences)).
 
 ### Resource Attributes
 
