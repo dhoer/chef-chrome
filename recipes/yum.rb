@@ -1,7 +1,7 @@
 yum_repository 'google-chrome' do
   description 'Google Chrome Repo'
-  baseurl 'http://dl.google.com/linux/chrome/rpm/stable/$basearch'
-  gpgkey 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
+  baseurl node['chrome']['yum_baseurl']
+  gpgkey node['chrome']['yum_gpgkey']
   action :nothing
 end.run_action(:add)
 

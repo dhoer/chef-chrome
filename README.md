@@ -36,6 +36,7 @@ A library method is provided to retrieve the Chrome version installed:
 ```ruby
 v = chrome_version
 ```
+
 ### Attributes
 
 See [attributes/default.rb](https://github.com/dhoer/chef-chrome/blob/master/attributes/default.rb) for complete list 
@@ -44,14 +45,12 @@ of attributes.
 - `node['chrome']['track']` - For Linux only. Install stable, beta or unstable version. Default is `stable`.
 - `node['chrome']['32bit_only']` - For windows only. Install 32-bit browser on 64-bit machines. Default is `false`.
 
-### Preferences Resource
+## Preferences Resource
 
 Manage a template resource for configuring 
 [master preferences](http://www.chromium.org/administrators/configuring-other-preferences).
 
-#### Resource Attributes
-
-Current attributes used by preferences:
+### Resource Attributes
 
 - `name` - The name of the preference. 
 - `cookbook` - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named 
@@ -59,7 +58,7 @@ template in the cookbook where the definition is used.
 - `template` - Default `master_preferences.json.erb`, source template file.
 - `params` - Additional parameters, see Examples.
 
-#### Examples
+### Examples
     
 The following example would look for a template named `master_preferences.json.erb` in your cookbook.
 

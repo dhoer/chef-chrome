@@ -1,5 +1,3 @@
-include_recipe 'chrome'
-
 v = chrome_version
 
 fail "Chrome version returned is invalid: #{v}" unless v.match(/[\d|.]*/)
