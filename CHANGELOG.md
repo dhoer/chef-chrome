@@ -3,6 +3,7 @@
 ## 1.0.0
 
 - Support multiple platforms
+- Rename preferences resource to master_preferences
 
 ## 0.4.0
 
