@@ -1,5 +1,5 @@
-actions :preferences
-default_action :preferences
+actions :master_preferences
+default_action :master_preferences
 
 attribute :name, kind_of: String, name_attribute: true
 attribute :template, kind_of: String, default: 'master_preferences.json.erb'

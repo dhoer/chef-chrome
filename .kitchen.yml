@@ -16,4 +16,5 @@ suites:
     run_list:
       - recipe[chrome_test::default]
       - recipe[chrome_test::version]
+      - recipe[chrome_test::master_preferences]
     attributes:

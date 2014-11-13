@@ -8,4 +8,9 @@ describe 'chrome::default' do
     its(:stdout) { should match(/Google Chrome /) }
     its(:exit_status) { should eq 0 }
   end
+
+  describe file('/opt/google/chrome/master_preferences') do
+    it { should be_file }
+    its(:content) { should match %r{"homepage" : "https://www.getchef.com",} }
+  end
 end

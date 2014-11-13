@@ -1,7 +1,9 @@
 default['chrome']['track'] = 'stable'
 default['chrome']['32bit_only'] = false
 
-default['chrome']['win_preferences'] = 'C:\Program Files (x86)\Google\Chrome\Application\master_preferences'
+default['chrome']['master_preferences_windows'] = 'C:\Program Files (x86)\Google\Chrome\Application\master_preferences'
+default['chrome']['master_preferences_mac'] = '/Library/Google/Google Chrome Master Preferences'
+default['chrome']['master_preferences_linux'] = '/opt/google/chrome/master_preferences'
 
 default['chrome']['apt_uri'] = 'http://dl.google.com/linux/chrome/deb'
 default['chrome']['apt_key'] = 'https://dl-ssl.google.com/linux/linux_signing_key.pub'

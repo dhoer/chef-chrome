@@ -3,5 +3,5 @@ chrome 'set_user_preferences' do
   params(
     homepage: 'https://www.getchef.com'
   )
-  action :preferences
+  action :master_preferences
 end

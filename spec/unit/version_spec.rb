@@ -22,7 +22,7 @@ describe 'chrome_test::version' do
     end
   end
 
-  context '*nix install' do
+  context 'linux install' do
     let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
     let(:shellout) { double(run_command: nil, error!: nil, stdout: 'Google Chrome 38.0.2125.234') }
 
