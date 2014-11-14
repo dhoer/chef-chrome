@@ -9,13 +9,13 @@ describe 'chrome_test::default' do
     end
   end
 
-  # context 'dmg' do
-  #   let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.7.4').converge(described_recipe) }
-  #
-  #   it 'installs chrome' do
-  #     expect(chef_run).to install_dmg_package('Google Chrome')
-  #   end
-  # end
+  context 'dmg' do
+    let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.7.4').converge(described_recipe) }
+
+    it 'installs chrome' do
+      expect(chef_run).to install_dmg_package('Google Chrome')
+    end
+  end
 
   context 'yum' do
     let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'centos', version: '7.0').converge(described_recipe) }
