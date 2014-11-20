@@ -7,7 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '1.0.0'
 
 supports 'centos', '>= 7.0'
-supports 'rhel', '>= 7.0'
+supports 'redhat', '>= 7.0'
 supports 'fedora'
 supports 'mac_os_x'
 supports 'debian'
