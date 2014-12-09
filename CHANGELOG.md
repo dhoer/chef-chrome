@@ -1,5 +1,11 @@
 # Chrome Changelog
 
+## 1.0.1
+
+- Fix Chef Client 12 introduced error: undefined method `new' for Chrome:Module
+- Remove trailing space from chrome_version
+- Add .chefignore
+
 ## 1.0.0
 
 - Support multiple platforms
