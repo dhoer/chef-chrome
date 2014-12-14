@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 1.0.3
+
+- Fix readme rendering issue on supermarket
+
 ## 1.0.2
 
 - Rename .chefignore to chefignore
