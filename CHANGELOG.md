@@ -2,7 +2,7 @@
 
 ## 1.0.4
 
-- Fix rubocop issues
+- Fix rubocop offenses
 
 ## 1.0.3
 
