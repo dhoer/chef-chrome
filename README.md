@@ -37,6 +37,12 @@ A library method `chrome_version` is provided to retrieve the Chrome version ins
 v = chrome_version
 ```
 
+__Tip:__ use `allow_any_instance_of` to mock chrome_version when testing with rspec:
+
+```ruby
+allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('38.0.2125.234')
+```
+
 ### Attributes
 
 - `node['chrome']['track']` - For Linux only. Install stable, beta or unstable version. Default is `stable`.
@@ -47,8 +53,8 @@ of attributes.
 
 ## master_preferences 
 
-Manage a template resource that configures master_preferences
-([More info...](http://www.chromium.org/administrators/configuring-other-preferences)).
+Manage a template resource that configures master_preferences.
+[More info...](http://www.chromium.org/administrators/configuring-other-preferences)
 
 ### Resource Attributes
 
