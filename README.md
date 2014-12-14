@@ -40,7 +40,7 @@ v = chrome_version
 **Tip:** use `allow_any_instance_of` to mock chrome_version when testing with rspec:
 
 ```ruby
-allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('38.0.2125.234')
+allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('40.0.0.0')
 ```
 
 ### Attributes
