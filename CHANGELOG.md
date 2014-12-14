@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 1.0.4
+
+- Fix rubocop issues
+
 ## 1.0.3
 
 - Fix readme rendering issue on supermarket

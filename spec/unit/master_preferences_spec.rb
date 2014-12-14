@@ -24,7 +24,6 @@ describe 'chrome_test::master_preferences' do
     it 'generates master_preferences' do
       expect(chef_run).to create_template('C:\Program Files (x86)\Google\Chrome\Application\master_preferences')
     end
-
   end
 
   context 'mac master_preferences' do
@@ -39,7 +38,6 @@ describe 'chrome_test::master_preferences' do
     it 'generates master_preferences' do
       expect(chef_run).to create_template('/Library/Google/Google Chrome Master Preferences')
     end
-
   end
 
   context 'linux master_preferences' do
@@ -48,6 +46,5 @@ describe 'chrome_test::master_preferences' do
     it 'generates master_preferences' do
       expect(chef_run).to create_template('/opt/google/chrome/master_preferences')
     end
-
   end
 end
