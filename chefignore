@@ -55,6 +55,11 @@ features/*
 Guardfile
 Procfile
 
+# Test-Kitchen #
+################
+.kitchen.yml
+.kitchen/*
+
 # SCM #
 #######
 .git
@@ -95,3 +100,7 @@ Vagrantfile
 # Travis #
 ##########
 .travis.yml
+
+# Rubocop #
+###########
+.rubocop.yml
