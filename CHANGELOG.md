@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 1.0.2
+
+- Rename .chefignore to chefignore
+
 ## 1.0.1
 
 - Fix Chef Client 12 introduced error: undefined method `new' for Chrome:Module
