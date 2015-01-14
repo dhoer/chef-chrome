@@ -37,7 +37,7 @@ A library method `chrome_version` is provided to retrieve the Chrome version ins
 v = chrome_version
 ```
 
-**Tip:** use `allow_any_instance_of` to stub chrome_version when testing with rspec:
+**Tip:** use `allow_any_instance_of` to stub chrome_version method when testing with rspec:
 
 ```ruby
 allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('40.0.0.0')
