@@ -1,6 +1,10 @@
 # Chrome Cookbook
 
-[![Build Status](https://travis-ci.org/dhoer/chef-chrome.svg)](https://travis-ci.org/dhoer/chef-chrome)
+[![Cookbook Version](http://img.shields.io/cookbook/v/chrome.svg?style=flat-square)][cookbook]
+[![Build Status](http://img.shields.io/travis/dhoer/chef-chrome.svg?style=flat-square)][travis]
+
+[cookbook]: https://supermarket.chef.io/cookbooks/chrome
+[travis]: https://travis-ci.org/dhoer/chef-chrome
 
 This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides 
 `chrome_version` library method  to retrieve Chrome version installed, and provides `master_preferences` resource
