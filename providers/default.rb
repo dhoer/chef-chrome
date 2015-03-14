@@ -4,12 +4,18 @@ end
 
 action :master_preferences do
   converge_by('chrome_master_preferences') do
-    if platform?('windows')
+    case node['platform']
+    when 'windows'
       flavor = node['chrome']['master_preferences_windows']
-    elsif platform?('mac_os_x')
+    when 'mac_os_x'
       flavor = node['chrome']['master_preferences_mac']
     else
       flavor = node['chrome']['master_preferences_linux']
+    end
+
+    directory flavor.slice(0, flavor.rindex('/')) do
+      recursive true
+      only_if { platform?('mac_os_x') }
     end
 
     template flavor do

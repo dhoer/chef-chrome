@@ -1,7 +1,8 @@
 def chrome_version
-  if platform?('windows')
+  case node['platform']
+  when 'windows'
     chrome_windows_version
-  elsif platform?('mac_os_x')
+  when 'mac_os_x'
     chrome_mac_version
   else
     chrome_linux_version

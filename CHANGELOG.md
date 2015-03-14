@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 1.0.5
+
+- Fix mac issues
+
 ## 1.0.4
 
 - Fix rubocop offenses

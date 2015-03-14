@@ -1,14 +1,14 @@
 default['chrome']['track'] = 'stable'
 default['chrome']['32bit_only'] = false
 
-default['chrome']['master_preferences_windows'] = 'C:\Program Files (x86)\Google\Chrome\Application\master_preferences'
+default['chrome']['master_preferences_windows'] = 'C:/Program Files (x86)/Google/Chrome/Application/master_preferences'
 default['chrome']['master_preferences_mac'] = '/Library/Google/Google Chrome Master Preferences'
 default['chrome']['master_preferences_linux'] = '/opt/google/chrome/master_preferences'
 
 default['chrome']['apt_uri'] = 'http://dl.google.com/linux/chrome/deb'
 default['chrome']['apt_key'] = 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
 default['chrome']['dmg_source'] = 'https://dl-ssl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg'
-default['chrome']['dmg_checksum'] = '7daa2dc5c46d9bfb14f1d7ff4b33884325e5e63e694810adc58f14795165c91a'
+default['chrome']['dmg_checksum'] = nil
 default['chrome']['msi_64'] = 'https://dl-ssl.google.com/tag/s/appguid={00000000-0000-0000-0000-000000000000}'\
   '&iid={00000000-0000-0000-0000-000000000000}&lang=en&browser=4&usagestats=0&appname=Google Chrome&needsadmin=false'\
   '/dl/chrome/install/googlechromestandaloneenterprise64.msi'

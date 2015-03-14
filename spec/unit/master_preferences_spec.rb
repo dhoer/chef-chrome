@@ -10,6 +10,10 @@ describe 'chrome_test::master_preferences' do
       ).converge(described_recipe)
     end
 
+    it 'does not create master_preferences directory' do
+      expect(chef_run).to_not create_directory('C:/Program Files (x86)/Google/Chrome/Application')
+    end
+
     it 'sets master_preferences' do
       expect(chef_run).to master_preferences_chrome('set_user_preferences').with(
         template: 'master_preferences.json.erb',
@@ -22,7 +26,7 @@ describe 'chrome_test::master_preferences' do
     end
 
     it 'generates master_preferences' do
-      expect(chef_run).to create_template('C:\Program Files (x86)\Google\Chrome\Application\master_preferences')
+      expect(chef_run).to create_template('C:/Program Files (x86)/Google/Chrome/Application/master_preferences')
     end
   end
 
@@ -35,6 +39,10 @@ describe 'chrome_test::master_preferences' do
       ).converge(described_recipe)
     end
 
+    it 'creates master_preferences directory' do
+      expect(chef_run).to create_directory('/Library/Google')
+    end
+
     it 'generates master_preferences' do
       expect(chef_run).to create_template('/Library/Google/Google Chrome Master Preferences')
     end
@@ -42,6 +50,10 @@ describe 'chrome_test::master_preferences' do
 
   context 'linux master_preferences' do
     let(:chef_run) { ChefSpec::SoloRunner.new(step_into: ['chrome']).converge(described_recipe) }
+
+    it 'does not create master_preferences directory' do
+      expect(chef_run).to_not create_directory('/opt/google/chrome')
+    end
 
     it 'generates master_preferences' do
       expect(chef_run).to create_template('/opt/google/chrome/master_preferences')
