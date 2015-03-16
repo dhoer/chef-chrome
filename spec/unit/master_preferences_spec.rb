@@ -11,7 +11,7 @@ describe 'chrome_test::master_preferences' do
     end
 
     it 'does not create master_preferences directory' do
-      expect(chef_run).to_not create_directory('C:/Program Files (x86)/Google/Chrome/Application')
+      expect(chef_run).to_not create_directory('C:\Program Files (x86)\Google\Chrome\Application')
     end
 
     it 'sets master_preferences' do
@@ -26,7 +26,7 @@ describe 'chrome_test::master_preferences' do
     end
 
     it 'generates master_preferences' do
-      expect(chef_run).to create_template('C:/Program Files (x86)/Google/Chrome/Application/master_preferences')
+      expect(chef_run).to create_template('C:\Program Files (x86)\Google\Chrome\Application\master_preferences')
     end
   end
 

@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 1.0.6
+
+- Fix windows master preferences path
+
 ## 1.0.5
 
 - Fix mac issues

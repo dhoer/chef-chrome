@@ -13,7 +13,7 @@ action :master_preferences do
       flavor = node['chrome']['master_preferences_linux']
     end
 
-    directory flavor.slice(0, flavor.rindex('/')) do
+    directory master_preferences_path(flavor) do
       recursive true
       only_if { platform?('mac_os_x') }
     end

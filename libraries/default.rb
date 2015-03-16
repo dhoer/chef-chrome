@@ -33,3 +33,11 @@ def chrome_linux_version
   cmd.error!
   cmd.stdout.match(/Google Chrome (.*)/)[1].strip
 end
+
+def master_preferences_path(flavor)
+  if flavor.include? '\\'
+    flavor.slice(0, flavor.rindex('\\'))
+  elsif flavor.include? '/'
+    flavor.slice(0, flavor.rindex('/'))
+  end
+end

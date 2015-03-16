@@ -1,7 +1,7 @@
 default['chrome']['track'] = 'stable'
 default['chrome']['32bit_only'] = false
 
-default['chrome']['master_preferences_windows'] = 'C:/Program Files (x86)/Google/Chrome/Application/master_preferences'
+default['chrome']['master_preferences_windows'] = 'C:\Program Files (x86)\Google\Chrome\Application\master_preferences'
 default['chrome']['master_preferences_mac'] = '/Library/Google/Google Chrome Master Preferences'
 default['chrome']['master_preferences_linux'] = '/opt/google/chrome/master_preferences'
 
