@@ -1,5 +1,9 @@
 # Chrome Changelog
 
+## 1.0.7
+
+Fix apt-get issue with updated Google key
+
 ## 1.0.6
 
 - Fix windows master preferences path

@@ -1,9 +1,9 @@
 ---
 driver:
   name: vagrant
-  provider: vmware_fusion
-  customize:
-      memory: 2048
+#  provider: vmware_fusion
+#  customize:
+#      memory: 2048
 
 provisioner:
   name: chef_solo
