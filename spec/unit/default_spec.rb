@@ -32,6 +32,15 @@ describe 'chrome_test::default' do
   context 'apt' do
     let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04').converge(described_recipe) }
 
+    it 'forces update of signing key' do
+      expect(chef_run).to run_execute('wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub'\
+        ' | sudo apt-key add -')
+    end
+
+    it 'performs apt-get update' do
+      expect(chef_run).to run_execute('apt-get update')
+    end
+
     it 'adds repo' do
       expect(chef_run).to add_apt_repository('chrome')
     end
