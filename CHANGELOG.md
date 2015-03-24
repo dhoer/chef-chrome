@@ -1,8 +1,12 @@
 # Chrome Changelog
 
+## 1.0.9
+
+- Revert fix for apt-get issue with updated Google sign key
+
 ## 1.0.8
 
-- Revert 1.0.7 change
+- Add apt unit tests
 
 ## 1.0.7
 
