@@ -37,7 +37,7 @@ describe 'chrome_test::default' do
     end
 
     it 'adds repo' do
-      expect(chef_run).to add_apt_repository('chrome')
+      expect(chef_run).to add_apt_repository('google-chrome')
     end
 
     it 'installs chrome' do
