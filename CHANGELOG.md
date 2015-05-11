@@ -1,4 +1,8 @@
-# Chrome Changelog
+# Changelog
+
+## 1.0.10
+
+- Use correct apt repository name
 
 ## 1.0.9
 

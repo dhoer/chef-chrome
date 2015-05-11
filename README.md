@@ -108,7 +108,7 @@ In the template, when you write your own, the `@` is significant.
 
 ## ChefSpec Matchers
 
-The Chrome cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test your 
+This cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test your 
 own cookbooks.
 
 Example Matcher Usage
@@ -121,7 +121,7 @@ expect(chef_run).to master_preferences_chrome('name').with(
 )
 ```
       
-Chrome Cookbook Matchers
+Cookbook Matchers
 
 - master_preferences_chrome(name)
 
