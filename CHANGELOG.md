@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.11
+
+- Remove Chef 12 source_url and issues_url from metadata
+
 ## 1.0.10
 
 - Use correct apt repository name
