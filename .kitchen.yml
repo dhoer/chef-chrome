@@ -1,9 +1,6 @@
 ---
 driver:
   name: vagrant
-#  provider: vmware_fusion
-#  customize:
-#      memory: 2048
 
 provisioner:
   name: chef_solo
@@ -14,9 +11,6 @@ platforms:
   - name: centos-7.0
   - name: debian-7.8
   - name: fedora-20
-  - name: macosx-10.10
-    driver:
-      box: macosx-10.10
 
 suites:
   - name: chrome_test

@@ -1,0 +1,23 @@
+# Usage: KITCHEN_YAML=.kitchen.macosx.yml kitchen list
+---
+driver:
+  name: vagrant
+  provider: vmware_fusion
+  customize:
+      memory: 2048
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: macosx-10.10
+    driver:
+      box: macosx-10.10
+
+suites:
+  - name: chrome_test
+    run_list:
+    - recipe[chrome_test::default]
+    - recipe[chrome_test::version]
+    - recipe[chrome_test::master_preferences]
+    attributes:
