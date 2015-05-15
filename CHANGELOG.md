@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.12
+
+- Remove 'Google Chrome' string from chrome_version for mac installations
+- Add separate kitchen yaml for mac
+- Replace contributors file with link to github
+
 ## 1.0.11
 
 - Remove Chef 12 source_url and issues_url from metadata

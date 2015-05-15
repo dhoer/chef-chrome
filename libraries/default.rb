@@ -3,9 +3,9 @@ def chrome_version
   when 'windows'
     chrome_windows_version
   when 'mac_os_x'
-    chrome_mac_version
+    chrome_linux_version('"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version')
   else
-    chrome_linux_version
+    chrome_linux_version('google-chrome --version')
   end
 end
 
@@ -20,15 +20,8 @@ def chrome_windows_version
   end
 end
 
-def chrome_mac_version
-  cmd = Mixlib::ShellOut.new('"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version')
-  cmd.run_command
-  cmd.error!
-  cmd.stdout.strip
-end
-
-def chrome_linux_version
-  cmd = Mixlib::ShellOut.new('google-chrome --version')
+def chrome_linux_version(command)
+  cmd = Mixlib::ShellOut.new(command)
   cmd.run_command
   cmd.error!
   cmd.stdout.match(/Google Chrome (.*)/)[1].strip
