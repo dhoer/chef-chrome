@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- Fix FC052: Metadata uses the unimplemented "suggests" keyword
+- Update metadata description, source_url and issues_url
+
 ## 1.0.12
 
 - Remove 'Google Chrome' string from chrome_version for mac installations
