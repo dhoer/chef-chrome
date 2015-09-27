@@ -11,6 +11,9 @@ platforms:
   - name: centos-7.0
   - name: debian-7.8
   - name: fedora-20
+  - name: windows-2012r2
+    driver:
+      box: dhoer/windows-2012r2
 
 suites:
   - name: chrome_test

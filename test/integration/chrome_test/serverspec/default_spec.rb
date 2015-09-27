@@ -1,7 +1,12 @@
 require 'serverspec'
 
 # Required by serverspec
-set :backend, :exec
+if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM).nil?
+  set :backend, :exec
+else
+  set :backend, :cmd
+  set :os, family: 'windows'
+end
 
 describe 'chrome::default' do
   case os[:family]
@@ -12,6 +17,15 @@ describe 'chrome::default' do
     end
 
     describe file('/Library/Google/Google Chrome Master Preferences') do
+      it { should be_file }
+      its(:content) { should match %r{"homepage" : "https://www.getchef.com",} }
+    end
+  when 'windows'
+    describe file('C:\Program Files (x86)\Google\Chrome\Application\chrome.exe') do
+      it { should be_file }
+    end
+
+    describe file('C:\Program Files (x86)\Google\Chrome\Application\master_preferences') do
       it { should be_file }
       its(:content) { should match %r{"homepage" : "https://www.getchef.com",} }
     end

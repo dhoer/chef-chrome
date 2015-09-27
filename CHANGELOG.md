@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+-  Fix #7 Chef::Exceptions::InvalidRemoteFileURI on Windows platform 
+
 ## 1.1.0
 
 - Fix FC052: Metadata uses the unimplemented "suggests" keyword

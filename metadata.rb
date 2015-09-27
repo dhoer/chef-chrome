@@ -4,7 +4,7 @@ maintainer_email 'dennis.hoer@gmail.com'
 license 'MIT'
 description 'Installs/Configures Chrome browser'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.1.0'
+version '1.1.1'
 
 supports 'centos', '>= 7.0'
 supports 'redhat', '>= 7.0'
