@@ -16,4 +16,4 @@ platforms:
 suites:
   - name: default
     run_list:
-      - chrome
+      - chrome_test
