@@ -2,7 +2,7 @@
 
 ## 1.2.0
 
-- Added architecture dependency 
+- Add apt arch dependency 
 
 ## 1.1.1
 
