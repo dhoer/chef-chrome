@@ -1,88 +1,79 @@
 # Usage: KITCHEN_YAML=.kitchen.docker.yml bundle exec kitchen list
 ---
-settings:
-  parallel: true
+driver:
+  name: dokken
+  chef_version: latest
+  privileged: true # because Docker and SystemD/Upstart
 
 transport:
   name: dokken
 
 provisioner:
   name: dokken
-  data_path: test/shared
 
 verifier:
   root_path: '/opt/verifier'
   sudo: false
 
-driver:
-  name: dokken
-
 platforms:
-- name: centos-6
-  driver:
-    image: centos:6
-    platform: rhel
-    run_command: /sbin/init
-    provision_command:
-      - /usr/bin/yum install -y initscripts net-tools wget
 - name: centos-7
   driver:
     image: centos:7
-    platform: rhel
-    run_command: /usr/lib/systemd/systemd
-    provision_command:
-      - /bin/yum update -y
-      - /bin/yum install -y initscripts net-tools wget
-- name: ubuntu-12.04
+    intermediate_instructions:
+      - RUN yum clean all
+      - RUN yum -y install net-tools lsof
+    pid_one_command: /usr/lib/systemd/systemd
+
+- name: debian-7
   driver:
-    image: ubuntu-upstart:12.04
-    platform: ubuntu
-    disable_upstart: false
+    image: debian:7
     run_command: /sbin/init
-    provision_command:
-      - /usr/bin/apt-get update
-      - /usr/bin/apt-get install apt-transport-https net-tools -y
-- name: ubuntu-14.04
-  driver:
-    image: ubuntu-upstart:14.04
-    platform: ubuntu
-    disable_upstart: false
-    run_command: /sbin/init
-    provision_command:
-      - /usr/bin/apt-get update
-      - /usr/bin/apt-get install apt-transport-https net-tools -y
-- name: ubuntu-16.04
-  driver:
-    image: ubuntu:16.04
-    platform: ubuntu
-    disable_upstart: false
-    run_command: /sbin/init
-    provision_command:
-      - /usr/bin/apt-get update
-      - /usr/bin/apt-get install apt-transport-https net-tools -y
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
+
 - name: debian-8
   driver:
     image: debian:8
-    platform: debian
-    disable_upstart: false
-    run_command: /sbin/init
-    provision_command:
-      - /usr/bin/apt-get update
-      - /usr/bin/apt-get install apt-transport-https net-tools -y
-- name: fedora-21
+    pid_one_command: /bin/systemd
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
+
+- name: fedora-23
   driver:
-    image: fedora:21
-    platform: rhel
-    disable_upstart: false
-    run_command: /sbin/init
-    provision_command:
-      - /bin/yum update -y
-      - /bin/yum install -y initscripts net-tools wget
+    image: fedora:23
+    intermediate_instructions:
+    - RUN yum clean all
+    pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN yum -y install tar yum
+
+- name: ubuntu-12.04
+  driver:
+    image: ubuntu-upstart:12.04
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
+
+- name: ubuntu-14.04
+  driver:
+    image: ubuntu-upstart:14.04
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
+
+- name: ubuntu-16.04
+  driver:
+    image: ubuntu:16.04
+    pid_one_command: /bin/systemd
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get apt-get update -o Acquire::CompressionTypes::Order::=gz
+      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
 
 suites:
 - name: default
   run_list:
     - chrome_test
-  attributes:
-    apt:
-      compile_time_update: true

@@ -19,6 +19,7 @@ platforms:
 suites:
   - name: default
     run_list:
+      - apt
       - chrome_test
       - chrome_test::x11
     attributes:
