@@ -2,7 +2,7 @@
 
 ## 1.2.0
 
-- Add apt arch dependency 
+- Constrain apt package to a particular arch
 
 ## 1.1.1
 
