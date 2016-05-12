@@ -1,10 +1,10 @@
 # Changelog
 
-## 1.2.0
+## 1.2.0 2016-05-12
 
 - Constrain apt package to a particular arch
 
-## 1.1.1
+## 1.1.1 2015-09-27
 
 -  Fix #7 Chef::Exceptions::InvalidRemoteFileURI on Windows platform 
 
