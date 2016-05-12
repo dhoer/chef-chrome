@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Added architecture dependency 
+
 ## 1.1.1
 
 -  Fix #7 Chef::Exceptions::InvalidRemoteFileURI on Windows platform 
