@@ -123,7 +123,7 @@ Cookbook Matchers
 
 ## Getting Help
 
-- Ask specific questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/chef-chrome).
+- Ask specific questions on [Stack Overflow](http://stackoverflow.com/search?q=google-chrome+chef).
 - Report bugs and discuss potential features in [Github issues](https://github.com/dhoer/chef-chrome/issues).
 
 ## Contributing
