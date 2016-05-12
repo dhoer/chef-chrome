@@ -1,0 +1,30 @@
+---
+driver:
+  name: localhost
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 12
+
+platforms:
+  - name: macosx-10
+  - name: windows-2012R2
+    attributes:
+      java_se:
+        force_i586: true
+
+suites:
+  - name: default
+    run_list:
+      - java_se
+  - name: alt_home
+    run_list:
+      - java_se
+    excludes:
+      - macosx-10
+    attributes:
+      java_se:
+        java_home:
+          C:\my\java\jdk
+        win_jre_home:
+          C:\my\java\jre
