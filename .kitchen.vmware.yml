@@ -15,7 +15,7 @@ platforms:
       box: macosx-10.10
 
 suites:
-  - name: chrome_test
+  - name: default
     run_list:
     - chrome_test
     attributes:
