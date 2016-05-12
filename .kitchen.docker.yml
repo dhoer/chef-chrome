@@ -82,4 +82,4 @@ platforms:
 suites:
 - name: default
   run_list:
-    - recipe[java_se]
+    - chrome

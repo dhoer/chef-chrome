@@ -16,15 +16,4 @@ platforms:
 suites:
   - name: default
     run_list:
-      - java_se
-  - name: alt_home
-    run_list:
-      - java_se
-    excludes:
-      - macosx-10
-    attributes:
-      java_se:
-        java_home:
-          C:\my\java\jdk
-        win_jre_home:
-          C:\my\java\jre
+      - chrome
