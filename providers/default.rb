@@ -2,6 +2,8 @@ def whyrun_supported?
   true
 end
 
+use_inline_resources
+
 action :master_preferences do
   converge_by('chrome_master_preferences') do
     flavor = case node['platform']
