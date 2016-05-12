@@ -1,7 +1,7 @@
 AllCops:
   Exclude:
-    - .kitchen/*
-    - vendor/*
+    - '.kitchen/**/*'
+    - 'vendor/**/*'
 
 LineLength:
   Enabled: true
