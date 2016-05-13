@@ -3,6 +3,8 @@ language: ruby
 rvm:
   - 2.1.7
 
+cache: bundler
+
 os: osx
 
 osx_image: xcode7.3
