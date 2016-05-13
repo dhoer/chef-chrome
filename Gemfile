@@ -4,6 +4,7 @@ gem 'foodcritic', '~> 6.2'
 gem 'rubocop', '~> 0.40'
 gem 'chefspec', '~> 4.6'
 gem 'berkshelf', '~> 4.2'
+gem 'ridley', '= 4.5.0'
 gem 'chef', '~> 12.0'
 
 group :integration do
