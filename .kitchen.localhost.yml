@@ -9,9 +9,6 @@ provisioner:
 platforms:
   - name: macosx-10
   - name: windows-2012R2
-    attributes:
-      java_se:
-        force_i586: true
 
 suites:
   - name: default
