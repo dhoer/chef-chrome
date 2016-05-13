@@ -27,7 +27,11 @@ def chrome_linux_version(command)
   cmd.error!
   Chef::Log.warn("stdout='#{cmd.stdout}'")
   Chef::Log.warn("stderr='#{cmd.stderr}'")
-  cmd.stdout.match(/Google Chrome (.*)/)[1].strip
+  begin
+    cmd.stdout.match(/Google Chrome (.*)/)[1].strip
+  rescue
+    cmd.stdout.match(/(.*)/)[1].strip
+  end
 end
 
 def master_preferences_path(flavor)
