@@ -21,16 +21,13 @@ def chrome_windows_version
 end
 
 def chrome_linux_version(command)
-  Chef::Log.warn("command='#{command}'")
   cmd = Mixlib::ShellOut.new(command)
   cmd.run_command
   cmd.error!
-  Chef::Log.warn("stdout='#{cmd.stdout}'")
-  Chef::Log.warn("stderr='#{cmd.stderr}'")
   begin
     cmd.stdout.match(/Google Chrome (.*)/)[1].strip
   rescue
-    cmd.stdout.match(/(.*)/)[1].strip
+    cmd.stdout.match(/(.*)/)[1].strip # older versions didn't include 'Google Chrome' in version output
   end
 end
 
