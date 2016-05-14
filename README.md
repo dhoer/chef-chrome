@@ -7,7 +7,7 @@
 
 [cookbook]: https://supermarket.chef.io/cookbooks/chrome
 [linux]: https://travis-ci.org/dhoer/chef-chrome
-[osx]: https://travis-ci.org/dhoer/chef-chrome
+[osx]: https://travis-ci.org/dhoer/chef-chrome/branches
 [win]: https://ci.appveyor.com/project/dhoer/chef-chrome
 
 This cookbook installs Google Chrome browser (https://www.google.com/chrome/) at compile time, provides 
