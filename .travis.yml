@@ -1,7 +1,7 @@
 language: ruby
 
 rvm:
-- 2.1.7
+  - 2.1.7
 
 cache: bundler
 
@@ -9,4 +9,7 @@ os: osx
 
 osx_image: xcode7.3
 
-sudo: required		  sudo: required
+sudo: required
+
+script:
+  - KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
