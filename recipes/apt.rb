@@ -3,7 +3,7 @@ apt_repository 'google-chrome' do
   distribution 'stable'
   components %w(main)
   key node['chrome']['apt_key']
-  arch 'amd64' if 'x86_64' == node['kernel']['processor']
+  arch 'amd64' if 'x86_64' == node['kernel']['machine']
   action :nothing
 end.run_action(:add)
 
