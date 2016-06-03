@@ -45,7 +45,7 @@ v = chrome_version
 **Tip:** use `allow_any_instance_of` to stub chrome_version method when testing with rspec:
 
 ```ruby
-allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('40.0.0.0')
+allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('50.0.0.0')
 ```
 
 ### Attributes
