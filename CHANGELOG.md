@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2 2016-06-03
+
+- PR #11 Use the machine key as opposed to processor 
+
 ## 1.2.1 2016-05-13
 
 - Fix #10 OSX 10.9 chrome_version throws exception
