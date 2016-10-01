@@ -4,7 +4,7 @@ gem 'foodcritic'
 gem 'rubocop'
 gem 'chefspec'
 gem 'berkshelf', '~> 4.3'
-gem 'chef', '~> 12.6.0'
+gem 'chef', '~> 12.6'
 
 group :integration do
   gem 'test-kitchen', '~> 1.12'
