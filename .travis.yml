@@ -22,10 +22,9 @@ matrix:
     osx_image: beta-xcode6.2
 
 before_install:
-- rvm get head
+- rvm get stable
 - rvm install 2.2
 - rvm use 2.2 --default
-- bundle install --jobs=3 --retry=3
 
 script:
 - KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
