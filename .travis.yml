@@ -33,6 +33,7 @@ matrix:
     osx_image: beta-xcode6.1
 
 script:
+- rvm get head
 - KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
 
 branches:
