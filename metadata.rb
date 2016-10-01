@@ -4,7 +4,11 @@ maintainer_email 'dennis.hoer@gmail.com'
 license 'MIT'
 description 'Installs/Configures Chrome browser'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.2.2'
+source_url 'https://github.com/dhoer/chef-chrome'
+issues_url 'https://github.com/dhoer/chef-chrome/issues'
+version '2.0.0'
+
+chef_version '>= 12.6'
 
 supports 'centos', '>= 7.0'
 supports 'redhat', '>= 7.0'
@@ -14,10 +18,6 @@ supports 'debian'
 supports 'ubuntu'
 supports 'windows'
 
-depends 'apt', '~> 2.3'
-depends 'dmg', '~> 2.2'
-depends 'yum', '~> 3.2'
-depends 'windows', '~> 1.0'
-
-source_url 'https://github.com/dhoer/chef-chrome' if respond_to?(:source_url)
-issues_url 'https://github.com/dhoer/chef-chrome/issues' if respond_to?(:issues_url)
+depends 'apt', '~> 4.0'
+depends 'dmg', '~> 3.0'
+depends 'yum', '~> 4.0'

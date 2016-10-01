@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 2016-10-01
+
+- Dropped support for Chef 11
+
 ## 1.2.2 2016-06-03
 
 - PR #11 Use the machine key as opposed to processor 

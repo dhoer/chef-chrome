@@ -49,7 +49,9 @@ describe 'chrome_test::master_preferences' do
   end
 
   context 'linux master_preferences' do
-    let(:chef_run) { ChefSpec::SoloRunner.new(step_into: ['chrome']).converge(described_recipe) }
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.0', step_into: ['chrome']).converge(described_recipe)
+    end
 
     it 'does not create master_preferences directory' do
       expect(chef_run).to_not create_directory('/opt/google/chrome')
