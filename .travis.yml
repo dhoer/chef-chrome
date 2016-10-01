@@ -1,4 +1,4 @@
-language: none
+language: ruby
 
 sudo: required
 
@@ -21,12 +21,12 @@ matrix:
   - os: osx
     osx_image: beta-xcode6.2
 
-#before_install:
-#- rvm get head
-#- rvm install 2.3
+before_install:
+- rvm get head
+- rvm install 2.3
 
 script:
-- KITCHEN_YAML=.kitchen.localhost.yml kitchen verify macosx
+- KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
 
 branches:
   only:
