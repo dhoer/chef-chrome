@@ -23,7 +23,7 @@ matrix:
 
 before_install:
 - rvm get head
-- rvm install 2.3
+- rvm install 2.2
 
 script:
 - KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
