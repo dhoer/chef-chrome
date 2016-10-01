@@ -7,18 +7,18 @@ addons:
       - chef-current-precise
     packages:
       - chefdk
+      - gcc
+      - libffi-dev
 
 services: docker
 
 env:
   matrix:
-  - INSTANCE=default-centos-7
-#  - INSTANCE=default-ubuntu-1204
-  - INSTANCE=default-ubuntu-1404
-  - INSTANCE=default-ubuntu-1604
-#  - INSTANCE=default-debian-7
-  - INSTANCE=default-debian-8
-  - INSTANCE=default-fedora-23
+    - INSTANCE=default-centos-7
+    - INSTANCE=default-ubuntu-1404
+    - INSTANCE=default-ubuntu-1604
+    - INSTANCE=default-debian-8
+    - INSTANCE=default-fedora-latest
 
 # Don't `bundle install`
 install: echo "skip bundle install"

@@ -16,7 +16,7 @@ to set user preferences.
 
 ## Requirements
 
-Chef 11.16+
+Chef 12.6+
 
 ### Platforms
 
@@ -30,7 +30,6 @@ Chef 11.16+
 - apt
 - dmg
 - yum
-- windows
 
 ## Usage
 
