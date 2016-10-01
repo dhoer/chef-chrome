@@ -8,7 +8,7 @@ source_url 'https://github.com/dhoer/chef-chrome'
 issues_url 'https://github.com/dhoer/chef-chrome/issues'
 version '2.0.0'
 
-chef_version '>= 12.14'
+chef_version '>= 12.6'
 
 supports 'centos', '>= 7.0'
 supports 'redhat', '>= 7.0'
@@ -18,4 +18,6 @@ supports 'debian'
 supports 'ubuntu'
 supports 'windows'
 
+depends 'apt', '~> 4.0'
 depends 'dmg', '~> 3.0'
+depends 'yum', '~> 4.0'

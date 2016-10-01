@@ -2,7 +2,7 @@
 
 ## 2.0.0 2016-10-01
 
-- Chef 12.14+ required because yum_repository was introduced (apt_repository was introduced in Chef 12.9)
+- Dropped support for Chef 11
 
 ## 1.2.2 2016-06-03
 
