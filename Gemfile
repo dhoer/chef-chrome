@@ -5,9 +5,10 @@ gem 'rubocop'
 gem 'chefspec'
 gem 'berkshelf', '~> 4.3'
 gem 'chef', '~> 12.6'
+gem 'rspec-core', '= 3.5.3'
 
 group :integration do
-  gem 'test-kitchen', '~> 1.12.0'
+  gem 'test-kitchen', '~> 1.12'
   gem 'winrm-fs', '~> 1.0'
   gem 'kitchen-dokken', '~> 0.0'
   gem 'kitchen-localhost', '~> 0.3'
