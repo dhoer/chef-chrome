@@ -32,8 +32,10 @@ matrix:
     rvm: 2.1.7
     osx_image: beta-xcode6.1
 
-script:
+before_install:
 - rvm get head
+
+script:
 - KITCHEN_YAML=.kitchen.localhost.yml bundle exec kitchen verify macosx
 
 branches:
