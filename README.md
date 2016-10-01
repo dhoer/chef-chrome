@@ -16,7 +16,7 @@ to set user preferences.
 
 ## Requirements
 
-Chef 11.16+
+Chef 12.14+ required because yum_repository was introduced (apt_repository was introduced in Chef 12.9)
 
 ### Platforms
 
@@ -27,10 +27,7 @@ Chef 11.16+
 
 ### Cookbooks
 
-- apt
-- dmg
-- yum
-- windows
+- dmg - required for Mac OS X platform only
 
 ## Usage
 

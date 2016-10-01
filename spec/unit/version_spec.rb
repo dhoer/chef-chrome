@@ -25,7 +25,10 @@ describe 'chrome_test::version' do
   end
 
   context 'linux install' do
-    let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.0', step_into: ['chrome']).converge(described_recipe)
+    end
+
     let(:shellout) { double(run_command: nil, error!: nil, stdout: 'Google Chrome 38.0.2125.234 ') }
 
     before { allow(Mixlib::ShellOut).to receive(:new).and_return(shellout) }
