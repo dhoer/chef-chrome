@@ -6,6 +6,8 @@ default['chrome']['master_preferences_mac'] = '/Library/Google/Google Chrome Mas
 default['chrome']['master_preferences_linux'] = '/opt/google/chrome/master_preferences'
 
 default['chrome']['apt_uri'] = 'http://dl.google.com/linux/chrome/deb'
+default['chrome']['apt_arch'] = 'amd64'
+
 default['chrome']['apt_key'] = 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
 default['chrome']['dmg_source'] = 'https://dl-ssl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg'
 default['chrome']['dmg_checksum'] = nil
