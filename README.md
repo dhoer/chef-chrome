@@ -16,7 +16,7 @@ to set user preferences.
 
 ## Requirements
 
-Chef 12.6+
+Chef 12.14+
 
 ### Platforms
 
@@ -27,9 +27,7 @@ Chef 12.6+
 
 ### Cookbooks
 
-- apt
-- dmg
-- yum
+- dmg - used by Mac OS X platform 
 
 ## Usage
 
