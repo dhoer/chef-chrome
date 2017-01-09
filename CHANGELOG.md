@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0 2017-01-09
+## 3.0.0 2017-01-09
 
 - Require Chef client 12.14 or greater
 - Remove apt and yum cookbook dependencies
