@@ -27,9 +27,7 @@ Chef 12.6+
 
 ### Cookbooks
 
-- apt
-- dmg
-- yum
+- dmg - Mac OS X platform only
 
 ## Usage
 

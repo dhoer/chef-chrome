@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0 2017-01-09
+
+- Require Chef client 12.14 or greater
+- Remove apt and yum cookbook dependencies
+
 ## 2.0.1 2017-01-09
 
 - PR #15 Default apt arch to amd64
