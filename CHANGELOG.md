@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1 2017-01-09
+
+- PR #15 Default apt arch to amd64
+
 ## 2.0.0 2016-10-01
 
 - Dropped support for Chef 11
