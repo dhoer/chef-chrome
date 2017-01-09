@@ -4,5 +4,7 @@ AllCops:
     - 'vendor/**/*'
 
 LineLength:
-  Enabled: true
   Max: 120
+
+BlockLength:
+  Max: 35
