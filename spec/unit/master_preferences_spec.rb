@@ -19,7 +19,7 @@ describe 'chrome_test::master_preferences' do
         template: 'master_preferences.json.erb',
         local: false,
         cookbook: 'chrome',
-        params: {
+        parameters: {
           homepage: 'https://www.getchef.com'
         }
       )
@@ -34,7 +34,7 @@ describe 'chrome_test::master_preferences' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new(
         platform: 'mac_os_x',
-        version: '10.7.4',
+        version: '10.12',
         step_into: ['chrome']
       ).converge(described_recipe)
     end
