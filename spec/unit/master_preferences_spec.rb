@@ -19,7 +19,7 @@ describe 'chrome_test::master_preferences' do
         template: 'master_preferences.json.erb',
         local: false,
         cookbook: 'chrome',
-        params: {
+        parameters: {
           homepage: 'https://www.getchef.com',
         }
       )

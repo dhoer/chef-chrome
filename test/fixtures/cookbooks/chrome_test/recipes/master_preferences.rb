@@ -1,6 +1,6 @@
 chrome 'set_user_preferences' do
   cookbook 'chrome'
-  params(
+  parameters(
     homepage: 'https://www.getchef.com'
   )
   action :master_preferences

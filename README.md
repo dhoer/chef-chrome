@@ -64,7 +64,7 @@ Manage a template resource that configures master_preferences.
 - `cookbook` - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named 
 template in the cookbook where the definition is used.
 - `template` - Default `master_preferences.json.erb`, source template file.
-- `params` - Additional parameters, see Examples.
+- `parameters` - Additional parameters, see Examples.
 
 ### Examples
     
@@ -72,7 +72,7 @@ The following example would look for a template named `master_preferences.json.e
 
 ```ruby
 chrome 'custom_preferences' do
-  params(
+  parameters(
     homepage: 'https://mycompany.com/'
     import_bookmarks_from_file: 'c:\path\to\bookmarks.html'
   )
@@ -90,7 +90,7 @@ To use the default template preferences, set cookbook to `chrome`, for example:
 ```ruby
 chrome 'set_user_preferences' do
   cookbook 'chrome'
-  params(
+  parameters(
     homepage: 'https://www.getchef.com'
   )
   action :master_preferences
@@ -99,7 +99,7 @@ end
     
 The parameter specified will be used as:
 
-- `@params[:homepage]`
+- `@parameters[:homepage]`
 
 In the template, when you write your own, the `@` is significant.
 
@@ -112,7 +112,7 @@ Example Matcher Usage
 
 ```ruby
 expect(chef_run).to master_preferences_chrome('name').with(
-  params: {
+  parameters: {
     homepage: 'https://www.getchef.com'
   }
 )

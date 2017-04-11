@@ -24,7 +24,7 @@ action :master_preferences do
     local new_resource.local
     cookbook new_resource.cookbook
     variables(
-      params: new_resource.params
+      parameters: new_resource.parameters
     )
   end
 end
