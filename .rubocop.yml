@@ -7,4 +7,4 @@ LineLength:
   Max: 120
 
 BlockLength:
-  Max: 35
+  Max: 60

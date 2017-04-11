@@ -20,7 +20,7 @@ describe 'chrome_test::master_preferences' do
         local: false,
         cookbook: 'chrome',
         parameters: {
-          homepage: 'https://www.getchef.com',
+          homepage: 'https://www.getchef.com'
         }
       )
     end
