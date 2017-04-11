@@ -8,3 +8,6 @@ LineLength:
 
 BlockLength:
   Max: 60
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
