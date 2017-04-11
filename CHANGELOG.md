@@ -2,7 +2,7 @@
 
 ## 4.0.0 2017-04-11
 
-- Rename mater_preferences' params attribute to parameters to be Chef 13 compatible
+- Rename master_preferences' params attribute to parameters to be Chef 13 compatible
 
 ## 3.0.0 2017-01-09
 
