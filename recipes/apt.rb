@@ -1,7 +1,7 @@
 apt_repository 'google-chrome' do
   arch node['chrome']['apt_arch']
   uri node['chrome']['apt_uri']
-  distribution node['chrome']['track']
+  distribution 'stable'
   components %w(main)
   key node['chrome']['apt_key']
   action :nothing
