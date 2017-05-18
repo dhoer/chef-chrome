@@ -1,8 +1,9 @@
 # Changelog
 
-## 4.0.1 2017-05-17
+## 4.0.1 2017-05-18
 
 - All Deb Package for Stable,Beta,Unstable are in the stable uri
+- Don't install chrome if already installed
 
 ## 4.0.0 2017-04-11
 
