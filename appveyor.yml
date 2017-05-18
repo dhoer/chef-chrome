@@ -25,7 +25,7 @@ install:
   - ps: net localgroup administrators $env:machine_user /add
   - ps: $env:PATH="C:\Ruby$env:ruby_version\bin;$env:PATH"
   - ps: gem install bundler --quiet --no-ri --no-rdoc
-  - ps: [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 Invoke-WebRequest -Uri http://curl.haxx.se/ca/cacert.pem -OutFile c:\projects\kitchen-machine\certs.pem
+  - ps: [Net.SecurityProtocolType]::Tls12 Invoke-WebRequest -Uri http://curl.haxx.se/ca/cacert.pem -OutFile c:\projects\kitchen-machine\certs.pem
 
 build_script:
   - bundle install || bundle install || bundle install
