@@ -10,6 +10,7 @@ describe 'chrome::default' do
     end
 
     it 'installs google' do
+      allow_any_instance_of(::File).to receive(:directory?).and_return(false)
       expect(chef_run).to install_windows_package('Google Chrome')
     end
   end
