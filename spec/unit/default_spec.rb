@@ -9,10 +9,11 @@ describe 'chrome::default' do
     end
 
     it 'installs google' do
-      allow_any_instance_of(::File).to receive(:directory?).and_return(false)
       expect(chef_run).to install_windows_package('Google Chrome')
     end
   end
+
+  # end if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM).nil?
 
   context 'dmg' do
     let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'mac_os_x', version: '10.12').converge(described_recipe) }
