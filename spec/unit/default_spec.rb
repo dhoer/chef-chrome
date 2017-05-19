@@ -3,7 +3,10 @@ require 'spec_helper'
 describe 'chrome::default' do
   context 'msi' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2').converge(described_recipe)
+      ChefSpec::SoloRunner.new(platform: 'windows', version: '2008R2') do
+        allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('38.0.2125.234')
+        allow_any_instance_of(::File).to receive(:directory?).and_return(false)
+      end.converge(described_recipe)
     end
 
     it 'installs google' do
