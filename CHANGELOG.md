@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.2 2017-06-15
+
+- Adding the chefignore to make our internal chef-guard happy
+
 ## 4.0.1 2017-05-18
 
 - All Deb Package for Stable,Beta,Unstable are in the stable uri
