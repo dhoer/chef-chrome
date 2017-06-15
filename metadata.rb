@@ -6,7 +6,7 @@ description 'Installs/Configures Chrome browser'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url 'https://github.com/dhoer/chef-chrome'
 issues_url 'https://github.com/dhoer/chef-chrome/issues'
-version '4.0.1'
+version '4.0.2'
 
 chef_version '>= 12.14'
 
