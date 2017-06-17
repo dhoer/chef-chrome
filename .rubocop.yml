@@ -11,3 +11,6 @@ BlockLength:
 
 Style/TrailingCommaInLiteral:
   Enabled: false
+
+Layout/EndOfLine:
+  Enable: false
