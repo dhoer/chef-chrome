@@ -13,4 +13,4 @@ Style/TrailingCommaInLiteral:
   Enabled: false
 
 Layout/EndOfLine:
-  Enable: false
+  Enabled: false
