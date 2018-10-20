@@ -49,6 +49,7 @@ allow_any_instance_of(Chef::Recipe).to receive(:chrome_version).and_return('50.0
 
 - `node['chrome']['track']` - For Linux only. Install stable, beta or unstable version. Default is `stable`.
 - `node['chrome']['32bit_only']` - For windows only. Install 32-bit browser on 64-bit machines. Default is `false`.
+- `node['chrome']['action']` - The action to use when configuring the package. Default is `:install`.
 
 See [attributes/default.rb](https://github.com/dhoer/chef-chrome/blob/master/attributes/default.rb) for complete list 
 of attributes.

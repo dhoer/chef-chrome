@@ -19,3 +19,5 @@ default['chrome']['msi'] = 'https://dl-ssl.google.com/tag/s/appguid=%7B8A69D345-
   '&needsadmin=false/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi'
 default['chrome']['yum_baseurl'] = 'http://dl.google.com/linux/chrome/rpm/stable/$basearch'
 default['chrome']['yum_gpgkey'] = 'https://dl-ssl.google.com/linux/linux_signing_key.pub'
+
+default['chrome']['action'] = :install

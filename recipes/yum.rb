@@ -7,4 +7,4 @@ end.run_action(:add)
 
 package "google-chrome-#{node['chrome']['track']}" do
   action :nothing
-end.run_action(:install)
+end.run_action(node['chrome']['action'])

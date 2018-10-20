@@ -3,4 +3,4 @@ windows_package 'Google Chrome' do
   source chrome64 ? node['chrome']['msi_64'] : node['chrome']['msi']
   action :nothing
   only_if { chrome_windows_version.nil? }
-end.run_action(:install)
+end.run_action(node['chrome']['action'])
